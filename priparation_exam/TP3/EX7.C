@@ -46,11 +46,11 @@
 
 int main()
 {
-    int N, i, j;
+    int N, i, j, scalaire;
     printf("Entre lordre de la matrice A et B:\n");
     scanf("%d", &N);
 
-    int A[N][N], B[N][N];
+    int A[N][N], B[N][N], somme[N][N], deff[N][N], produitScalaire[N][N];
     printf("La Matrice A :\n");
     for (i = 0; i < N; i++)
     {
@@ -89,6 +89,61 @@ int main()
         for (j = 0; j < N; j++)
         {
             printf("%d\t", B[i][j]);
+        }
+        printf("\n");
+    }
+    // la somme de A et B
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+            somme[i][j] = A[i][j] + B[i][j];
+        }
+    }
+    // afficharge la somme de A et B
+    printf("Votre matrice A+B:\n");
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+            printf("%d\t", somme[i][j]);
+        }
+        printf("\n");
+    }
+    // differance entr A -B
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+            deff[i][j] = A[i][j] - B[i][j];
+        }
+    }
+    // afficharge la differance  de A et B
+    printf("Votre matrice A-B:\n");
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+            printf("%d\t", deff[i][j]);
+        }
+        printf("\n");
+    }
+    // produitScalaire de A et B
+    printf("entre la Scalaire :\n");
+        scanf("%d", &scalaire);
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++){
+            produitScalaire[i][j] = scalaire *A[i][j];
+        }
+    }
+    // afficharge la produit par Scalaire  de A
+    printf("Votre produit par Scalaire de A:\n");
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < N; j++)
+        {
+            printf("%d\t", produitScalaire[i][j]);
         }
         printf("\n");
     }
