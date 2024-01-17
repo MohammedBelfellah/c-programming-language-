@@ -1,28 +1,26 @@
 #include <stdio.h>
 
-// her is a problem about infinite loops 
-// don not run this program (belfellah!)
+int sommeChiffres(int nombre)
+{
+    int somme = 0;
+    while (nombre > 0)
+    {
+        somme += nombre % 10;
+        nombre /= 10;
+    }
+    return somme;
+}
+
 int main()
 {
-    printf("Three-digit numbers divisible by the sum of their digits:\n");
+    printf("Nombres entiers de trois chiffres divisibles par la somme de leurs chiffres :\n");
 
-    for (int number = 100; number <= 999; number++)
+    for (int nombre = 100; nombre <= 999; nombre++)
     {
-        int originalNumber = number;
-        int sumOfDigits = 0;
-        int tempNumber = number; // Use a temporary variable to avoid modifying the original number
-
-        // Calculate the sum of digits
-        while (tempNumber > 0)
+        int somme = sommeChiffres(nombre);
+        if (somme != 0 && nombre % somme == 0)
         {
-            sumOfDigits += tempNumber % 10;
-            tempNumber /= 10;
-        }
-
-        // Check if the original number is divisible by the sum of its digits
-        if (originalNumber % sumOfDigits == 0)
-        {
-            printf("%d\n", originalNumber);
+            printf("%d\n", nombre);
         }
     }
 
